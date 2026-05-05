@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Reviews | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <p class="eyebrow">User Interaction Layer</p>
+    <h2>Google Review Corpus</h2>
+    <p>User reviews are the interaction signal that drives the network. Each reviewer becomes a social node, and each review creates a user-place link for the SNA pipeline.</p>
+</section>
+
+{% if not data.reviews_available %}
+<section class="card accent">
+    <h2>Live Review Data Not Loaded Yet</h2>
+    <p>The review interface is ready, but this environment does not currently have a Google Places API key configured. Once live data is collected, this page will show reviewer names, ratings, and review text for Tenkasi places.</p>
+</section>
+{% endif %}
+
+<section class="card">
+    <h2>User Reviews</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Place</th>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in data.reviews %}
+            <tr>
+                <td>{{ review.user_name }}</td>
+                <td>{{ review.place_name }}</td>
+                <td>{{ review.rating }}</td>
+                <td>{{ review.review_text[:160] }}{% if review.review_text|length > 160 %}...{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+  "nodes": 729,
+  "edges": 1568,
+  "density": 0.005909042946079983,
+  "average_clustering": 0.48153120604160005,
+  "connected_components": 101,
+  "largest_component_size": 129,
+  "average_shortest_path_length": 4.52749515503876,
+  "degree_distribution": {
+    "2": 9,
+    "3": 8,
+    "4": 667,
+    "7": 2,
+    "8": 29,
+    "11": 2,
+    "12": 8,
+    "14": 1,
+    "16": 3
+  },
+  "power_law_alpha": 1.979932237574458
+}

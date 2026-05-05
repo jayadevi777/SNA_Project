@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Research Design | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <p class="eyebrow">MTech-Level Project Framing</p>
+    <h2>Research Design and Subject Coverage</h2>
+    <p>This project is designed as a full Social Network Analysis system for tourism in Tenkasi. It combines data engineering, graph modeling, algorithmic analysis, and interpretive reporting in a single workflow.</p>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <h2>Workflow Phases</h2>
+        <div class="timeline">
+            {% for phase in data.workflow_phases %}
+            <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <p>{{ phase }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="card">
+        <h2>SNA Topic Coverage</h2>
+        <ul class="metric-list">
+            {% for topic in data.topic_catalog %}
+            <li>{{ topic }}</li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>
+
+<section class="module-grid">
+    {% for module in data.research_modules %}
+    <article class="card module-card">
+        <div class="module-head">
+            <h3>{{ module.title }}</h3>
+            <span class="status-chip">{{ module.status }}</span>
+        </div>
+        <p>{{ module.detail }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

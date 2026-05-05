@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% block title %}Analytics | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="page-head">
+    <h2>Network Analytics</h2>
+    <p>Social Network Analysis of {{ data.places|length }} tourist places across Tenkasi.</p>
+</section>
+
+<section class="stats-grid">
+    {% for item in data.homepage_metrics %}
+    <article class="stat-card panel">
+        <span>{{ item.label }}</span>
+        <strong>{{ item.value }}</strong>
+        <small>{{ item.subtext }}</small>
+    </article>
+    {% endfor %}
+</section>
+
+<section class="tab-bar">
+    <a href="/analytics?tab=overview" class="tab {% if active_tab == 'overview' %}active{% endif %}">🌐 Network Overview</a>
+    <a href="/analytics?tab=centrality" class="tab {% if active_tab == 'centrality' %}active{% endif %}">📈 Centrality</a>
+    <a href="/analytics?tab=communities" class="tab {% if active_tab == 'communities' %}active{% endif %}">🧬 Communities</a>
+    <a href="/analytics?tab=bridges" class="tab {% if active_tab == 'bridges' %}active{% endif %}">🌉 Bridges</a>
+    <a href="/analytics?tab=hidden_gems" class="tab {% if active_tab == 'hidden_gems' %}active{% endif %}">🌿 Hidden Gems</a>
+    <a href="/analytics?tab=graph" class="tab {% if active_tab == 'graph' %}active{% endif %}">🔗 Graph View</a>
+</section>
+
+{% if active_tab == 'overview' %}
+<section class="content-grid two">
+    <article class="panel">
+        <h3>Place Network Summary</h3>
+        <ul class="metric-list">
+            <li>Nodes: {{ data.place_stats.nodes or 0 }}</li>
+            <li>Edges: {{ data.place_stats.edges or 0 }}</li>
+            <li>Density: {{ "%.4f"|format(data.place_stats.density or 0) }}</li>
+            <li>Average clustering: {{ "%.4f"|format(data.place_stats.average_clustering or 0) }}</li>
+            <li>Connected components: {{ data.place_stats.connected_components or 0 }}</li>
+            <li>Average shortest path: {{ "%.4f"|format(data.place_stats.average_shortest_path_length or 0) }}</li>
+        </ul>
+    </article>
+    <article class="panel">
+        <h3>Chart Gallery</h3>
+        {% if artifact_url(data.plot_catalog.degree_distribution) %}
+        <img src="{{ artifact_url(data.plot_catalog.degree_distribution) }}" alt="Degree distribution">
+        {% endif %}
+    </article>
+</section>
+<section class="content-grid two">
+    <article class="panel">
+        <h3>Top Predicted Pairings</h3>
+        <div class="list-stack">
+            {% for row in data.top_predictions[:8] %}
+            <div class="list-item">
+                <div>
+                    <strong>{{ row.node1_label }}</strong>
+                    <div class="muted">potentially paired with {{ row.node2_label }}</div>
+                </div>
+                <div class="metric-inline">
+                    <span>CN {{ row.common_neighbors|int }}</span>
+                    <span>J {{ "%.3f"|format(row.jaccard_coefficient or 0) }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <h3>Community Footprint</h3>
+        {% if artifact_url(data.plot_catalog.community_sizes) %}
+        <img src="{{ artifact_url(data.plot_catalog.community_sizes) }}" alt="Community sizes">
+        {% endif %}
+    </article>
+</section>
+{% elif active_tab == 'centrality' %}
+<section class="chip-row">
+    <a href="/analytics?tab=centrality&metric=degree" class="chip {% if metric == 'degree' %}active{% endif %}">Degree Centrality</a>
+    <a href="/analytics?tab=centrality&metric=closeness" class="chip {% if metric == 'closeness' %}active{% endif %}">Closeness Centrality</a>
+    <a href="/analytics?tab=centrality&metric=betweenness" class="chip {% if metric == 'betweenness' %}active{% endif %}">Betweenness Centrality</a>
+    <a href="/analytics?tab=centrality&metric=pagerank" class="chip {% if metric == 'pagerank' %}active{% endif %}">PageRank</a>
+    <a href="/analytics?tab=centrality&metric=eigenvector" class="chip {% if metric == 'eigenvector' %}active{% endif %}">Eigenvector</a>
+    <a href="/analytics?tab=centrality&metric=katz" class="chip {% if metric == 'katz' %}active{% endif %}">Katz</a>
+    <a href="/analytics?tab=centrality&metric=hub" class="chip {% if metric == 'hub' %}active{% endif %}">HITS Hub</a>
+    <a href="/analytics?tab=centrality&metric=authority" class="chip {% if metric == 'authority' %}active{% endif %}">HITS Authority</a>
+</section>
+<section class="content-grid two">
+    <article class="panel">
+        <h3>Top 15 Places</h3>
+        <div class="rank-list">
+            {% for row in data.centrality_views[metric] %}
+            <div class="rank-card">
+                <div>
+                    <strong>{{ loop.index }}. {{ row.label }}</strong>
+                    <div class="muted">{{ row.node_type|title }}</div>
+                </div>
+                <div class="rank-value">
+                    {% if metric == 'degree' %}{{ "%.6f"|format(row.degree_centrality) }}{% endif %}
+                    {% if metric == 'closeness' %}{{ "%.6f"|format(row.closeness_centrality) }}{% endif %}
+                    {% if metric == 'betweenness' %}{{ "%.6f"|format(row.betweenness_centrality) }}{% endif %}
+                    {% if metric == 'pagerank' %}{{ "%.6f"|format(row.pagerank) }}{% endif %}
+                    {% if metric == 'eigenvector' %}{{ "%.6f"|format(row.eigenvector_centrality) }}{% endif %}
+                    {% if metric == 'katz' %}{{ "%.6f"|format(row.katz_centrality) }}{% endif %}
+                    {% if metric == 'hub' %}{{ "%.6f"|format(row.hits_hub) }}{% endif %}
+                    {% if metric == 'authority' %}{{ "%.6f"|format(row.hits_authority) }}{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <h3>Top 10 Chart</h3>
+        {% if metric == 'degree' and artifact_url(data.plot_catalog.degree_distribution) %}
+        <img src="{{ artifact_url(data.plot_catalog.degree_distribution) }}" alt="Degree chart">
+        {% elif metric == 'closeness' and artifact_url(data.plot_catalog.closeness_leaders) %}
+        <img src="{{ artifact_url(data.plot_catalog.closeness_leaders) }}" alt="Closeness chart">
+        {% elif metric == 'betweenness' and artifact_url(data.plot_catalog.betweenness_leaders) %}
+        <img src="{{ artifact_url(data.plot_catalog.betweenness_leaders) }}" alt="Betweenness chart">
+        {% elif metric == 'pagerank' and artifact_url(data.plot_catalog.pagerank_leaders) %}
+        <img src="{{ artifact_url(data.plot_catalog.pagerank_leaders) }}" alt="Pagerank chart">
+        {% elif artifact_url(data.plot_catalog.pagerank_leaders) %}
+        <img src="{{ artifact_url(data.plot_catalog.pagerank_leaders) }}" alt="Centrality chart">
+        {% endif %}
+    </article>
+</section>
+{% elif active_tab == 'communities' %}
+<section class="community-stack">
+    {% for group in data.community_highlights %}
+    <article class="community-card panel">
+        <div class="section-title">
+            <h3>Community {{ group.id }}</h3>
+            <span>{{ group.size }} places</span>
+        </div>
+        <div class="metric-inline">
+            {% for item in group.top_categories %}
+            <span class="tag">{{ item }}</span>
+            {% endfor %}
+            {% for item in group.top_taluks %}
+            <span class="tag">{{ item }}</span>
+            {% endfor %}
+        </div>
+        <div class="tag-cloud">
+            {% for item in group.places %}
+            <span class="tag">{{ item }}</span>
+            {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% elif active_tab == 'bridges' %}
+<section class="content-grid two">
+    <article class="panel">
+        <h3>Bridge Places</h3>
+        <div class="rank-list">
+            {% for row in data.bridge_places %}
+            <div class="rank-card">
+                <div>
+                    <strong>{{ row.label }}</strong>
+                    <div class="muted">Betweenness bridge</div>
+                </div>
+                <div class="rank-value">{{ "%.6f"|format(row.betweenness_centrality) }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <h3>Correlation Plot</h3>
+        {% if artifact_url(data.plot_catalog.rating_vs_betweenness) %}
+        <img src="{{ artifact_url(data.plot_catalog.rating_vs_betweenness) }}" alt="Rating vs Betweenness">
+        {% endif %}
+    </article>
+</section>
+{% elif active_tab == 'hidden_gems' %}
+<section class="card-grid">
+    {% for place in data.hidden_gems %}
+    <article class="place-card panel">
+        {% if place.photo_url %}
+        <img src="{{ place.photo_url }}" alt="{{ place.place_name }}">
+        {% endif %}
+        <div class="place-top">
+            <span class="tag">{{ place.category_label }}</span>
+            <span class="tag">{{ place.taluk }}</span>
+            <span class="tag">{{ place.network_role }}</span>
+        </div>
+        <h3>{{ place.place_name }}</h3>
+        <div class="metric-inline">
+            <span>⭐ {{ "%.1f"|format(place.rating or 0) }}</span>
+            <span>{{ place.total_user_ratings|int }} reviews</span>
+        </div>
+        <p class="muted">{{ place.formatted_address }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% elif active_tab == 'graph' %}
+<section class="content-grid two">
+    <article class="panel">
+        <div class="section-title">
+            <h3>Graph Snapshot</h3>
+            <a href="/graphs">Open full graph lab</a>
+        </div>
+        <div class="chip-row">
+            <button class="chip active graph-color-chip" data-mode="community">Community</button>
+            <button class="chip graph-color-chip" data-mode="category">Category</button>
+            <button class="chip graph-color-chip" data-mode="taluk">Taluk</button>
+            <button class="chip graph-color-chip" data-mode="pagerank">PageRank</button>
+        </div>
+        <div id="graph-view"
+            class="graph-canvas"
+            data-graph='{{ data.graph_data | tojson }}'></div>
+    </article>
+    <article class="panel">
+        <h3>Why this view is filtered</h3>
+        <p class="muted">The full graph contains thousands of weighted place-place links. For readability, the default visual view emphasizes stronger edges and uses the dedicated graph lab for deeper interaction.</p>
+        <ul class="metric-list">
+            <li>Total graph nodes: {{ data.place_stats.nodes or 0 }}</li>
+            <li>Total graph edges: {{ data.place_stats.edges or 0 }}</li>
+            <li>Use community colors to see cluster boundaries.</li>
+            <li>Use PageRank colors to spot influential places.</li>
+            <li>Open the graph lab for edge-threshold tuning and node search.</li>
+        </ul>
+        <a class="btn secondary" href="/graphs">Open Graph Lab</a>
+    </article>
+</section>
+{% endif %}
+{% endblock %}

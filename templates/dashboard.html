@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero-panel tight">
+    <div class="hero-copy-block">
+        <p class="eyebrow">Network Dashboard</p>
+        <h2>Tenkasi tourism network at a glance.</h2>
+        <p class="hero-subtle">This page aggregates the place graph, user graph, centrality leaders, and export links into one operational view.</p>
+    </div>
+    <div class="hero-side-card">
+        <p class="eyebrow">Data Status</p>
+        <h3>{% if data.reviews_available %}Interaction data loaded{% else %}Places only{% endif %}</h3>
+        <p>{% if data.reviews_available %}User reviews are present and graph construction can proceed.{% else %}Google review data is not loaded yet, so place and user network outputs remain limited.{% endif %}</p>
+    </div>
+</section>
+
+<section class="stat-grid">
+    {% for metric in data.homepage_metrics %}
+    <article class="metric-card">
+        <span>{{ metric.label }}</span>
+        <strong>{{ metric.value }}</strong>
+    </article>
+    {% endfor %}
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <div class="section-head">
+            <h2>Place Network</h2>
+            <a class="text-link" href="/graphs">Open graph page</a>
+        </div>
+        {% if image_url(data.plot_catalog.place_network) %}
+        <img src="{{ image_url(data.plot_catalog.place_network) }}" alt="Place network graph">
+        {% else %}
+        <p class="quiet-note">Run the SNA pipeline to generate the place network image.</p>
+        {% endif %}
+    </article>
+    <article class="card">
+        <div class="section-head">
+            <h2>User Network</h2>
+            <a class="text-link" href="/graphs">Open graph page</a>
+        </div>
+        {% if image_url(data.plot_catalog.user_network) %}
+        <img src="{{ image_url(data.plot_catalog.user_network) }}" alt="User network graph">
+        {% else %}
+        <p class="quiet-note">Run the SNA pipeline to generate the user network image.</p>
+        {% endif %}
+    </article>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <div class="section-head">
+            <h2>Top Place Nodes</h2>
+            <a class="text-link" href="/centrality">All metrics</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>PageRank</th>
+                    <th>Betweenness</th>
+                    <th>Closeness</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data.place_rankings[:10] %}
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ "%.4f"|format(row.pagerank) }}</td>
+                    <td>{{ "%.4f"|format(row.betweenness_centrality) }}</td>
+                    <td>{{ "%.4f"|format(row.closeness_centrality) }}</td>
+                </tr>
+                {% endfor %}
+                {% if not data.place_rankings %}
+                <tr><td colspan="4">No place centrality output yet.</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </article>
+    <article class="card">
+        <div class="section-head">
+            <h2>Exports</h2>
+            <a class="text-link" href="/research">Method</a>
+        </div>
+        <div class="mini-place-list">
+            <a class="mini-place-item" href="{{ image_url(data.exports.place_nodes) or '#' }}">Place nodes CSV</a>
+            <a class="mini-place-item" href="{{ image_url(data.exports.place_edges) or '#' }}">Place edges CSV</a>
+            <a class="mini-place-item" href="{{ image_url(data.exports.neo4j_places) or '#' }}">Neo4j place nodes</a>
+            <a class="mini-place-item" href="{{ image_url(data.exports.neo4j_cypher) or '#' }}">Neo4j import script</a>
+        </div>
+    </article>
+</section>
+{% endblock %}

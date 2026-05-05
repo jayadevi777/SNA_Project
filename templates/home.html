@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}Home | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Google Places + NetworkX + Neo4j</p>
+        <h2>Explore Tenkasi through a dense live tourism network.</h2>
+        <p class="subtitle">This system fuses Google Places data, user reviews, graph analytics, community structure, and link prediction to surface influential places and overlooked circuits across Tenkasi.</p>
+        <div class="hero-actions">
+            <a href="/analytics" class="btn primary">Open Analytics</a>
+            <a href="/recommendations" class="btn secondary">Open Recommendations</a>
+        </div>
+    </div>
+    <div class="hero-side panel">
+        {% if data.most_visited_place.photo_url %}
+        <img src="{{ data.most_visited_place.photo_url }}" alt="{{ data.most_visited_place.place_name }}">
+        {% endif %}
+        <h3>Most Visited Place</h3>
+        <div class="feature-title">{{ data.most_visited_place.place_name or "Waiting for live data" }}</div>
+        <div class="muted">
+            {% if data.most_visited_place.rating %}⭐ {{ data.most_visited_place.rating }}{% endif %}
+            {% if data.most_visited_place.total_user_ratings %} · {{ data.most_visited_place.total_user_ratings }} reviews{% endif %}
+            {% if data.most_visited_place.connection_count %} · {{ data.most_visited_place.connection_count }} links{% endif %}
+        </div>
+        <div class="pill-row">
+            <span class="pill">{{ data.most_visited_place.category_label or data.most_visited_place.category or "tourism" }}</span>
+            <span class="pill">{{ data.most_visited_place.taluk or data.location_name }}</span>
+            <span class="pill">{{ data.most_visited_place.network_role or "Featured" }}</span>
+        </div>
+    </div>
+</section>
+
+<section class="stats-grid">
+    {% for item in data.homepage_metrics %}
+    <article class="stat-card panel">
+        <span>{{ item.label }}</span>
+        <strong>{{ item.value }}</strong>
+        <small>{{ item.subtext }}</small>
+    </article>
+    {% endfor %}
+</section>
+
+<section class="content-grid two">
+    <article class="panel">
+        <div class="section-title">
+            <h3>Category Distribution</h3>
+        </div>
+        <canvas id="categoryChart"
+            data-labels='{{ data.category_summary | map(attribute="category") | list | tojson }}'
+            data-values='{{ data.category_summary | map(attribute="count") | list | tojson }}'></canvas>
+    </article>
+    <article class="panel">
+        <div class="section-title">
+            <h3>Taluk Ratings Overview</h3>
+        </div>
+        <canvas id="talukChart"
+            data-labels='{{ data.taluk_summary | map(attribute="taluk") | list | tojson }}'
+            data-values='{{ data.taluk_summary | map(attribute="avg_rating") | list | tojson }}'></canvas>
+    </article>
+</section>
+
+<section class="section-block">
+    <div class="section-title">
+        <h3>Places Per Taluk</h3>
+    </div>
+    <div class="card-grid">
+        {% for taluk in data.taluk_summary %}
+        <article class="taluk-card panel">
+            <span>{{ taluk.taluk|upper }}</span>
+            <strong>{{ taluk.count }}</strong>
+            <div class="muted">⭐ {{ "%.2f"|format(taluk.avg_rating or 0) }} avg</div>
+            <p>{{ taluk.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="content-grid two">
+    <article class="panel">
+        <div class="section-title">
+            <h3>Featured Places</h3>
+            <a href="/places">View all</a>
+        </div>
+        <div class="spotlight-grid">
+            {% for place in data.featured_places[:6] %}
+            <article class="place-spotlight">
+                {% if place.photo_url %}
+                <img src="{{ place.photo_url }}" alt="{{ place.place_name }}">
+                {% endif %}
+                <div class="place-top">
+                    <span class="tag">{{ place.category_label }}</span>
+                    <span class="tag">{{ place.taluk }}</span>
+                </div>
+                <h4>{{ place.place_name }}</h4>
+                <div class="metric-inline">
+                    <span>⭐ {{ "%.1f"|format(place.rating or 0) }}</span>
+                    <span>PR {{ "%.4f"|format(place.pagerank or 0) }}</span>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <div class="section-title">
+            <h3>Top Hidden Gems</h3>
+            <a href="/analytics?tab=hidden_gems">View analysis</a>
+        </div>
+        <div class="list-stack">
+            {% for place in data.hidden_gems[:8] %}
+            <div class="list-item">
+                <div>
+                    <strong>{{ place.place_name }}</strong>
+                    <div class="muted">{{ place.taluk }} · {{ place.network_role }}</div>
+                </div>
+                <div class="metric-inline">
+                    <span>⭐ {{ "%.1f"|format(place.rating or 0) }}</span>
+                    <span>{{ place.total_user_ratings|int }} rev</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+
+<section class="content-grid two">
+    <article class="panel">
+        <div class="section-title">
+            <h3>Community Highlights</h3>
+            <a href="/analytics?tab=communities">Open clusters</a>
+        </div>
+        <div class="community-stack">
+            {% for group in data.community_highlights[:4] %}
+            <article class="community-card panel inner-panel">
+                <div class="section-title">
+                    <h4>Community {{ group.id }}</h4>
+                    <span>{{ group.size }} places</span>
+                </div>
+                <div class="metric-inline">
+                    {% for cat in group.top_categories %}
+                    <span class="tag">{{ cat }}</span>
+                    {% endfor %}
+                </div>
+                <p class="muted">{{ group.places|join(", ") }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <div class="section-title">
+            <h3>Predicted Pairings</h3>
+            <a href="/recommendations">Use in recommendations</a>
+        </div>
+        <div class="list-stack">
+            {% for row in data.top_predictions[:8] %}
+            <div class="list-item">
+                <div>
+                    <strong>{{ row.node1_label }}</strong>
+                    <div class="muted">likely paired with {{ row.node2_label }}</div>
+                </div>
+                <div class="metric-inline">
+                    <span>CN {{ row.common_neighbors|int }}</span>
+                    <span>AA {{ "%.2f"|format(row.adamic_adar_index or 0) }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Charts | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero-panel tight">
+    <div class="hero-copy-block">
+        <p class="eyebrow">Chart Gallery</p>
+        <h2>Distribution, centrality, community, and rating-correlation charts.</h2>
+    </div>
+    <div class="hero-side-card">
+        <p class="eyebrow">Coverage</p>
+        <h3>Plots</h3>
+        <p>Charts are generated from NetworkX analysis outputs and saved as reusable artifacts.</p>
+    </div>
+</section>
+
+<section class="plot-grid">
+    {% for key, plot_path in data.plot_catalog.items() %}
+    {% if image_url(plot_path) %}
+    <article class="card">
+        <h2>{{ key.replace('_', ' ')|title }}</h2>
+        <img src="{{ image_url(plot_path) }}" alt="{{ key }}">
+    </article>
+    {% endif %}
+    {% endfor %}
+    {% if not data.analytics_available %}
+    <article class="card">
+        <h2>No charts yet</h2>
+        <p>Run collection and the SNA pipeline to generate chart artifacts.</p>
+    </article>
+    {% endif %}
+</section>
+{% endblock %}

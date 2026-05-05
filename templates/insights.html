@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Insights | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero-panel tight">
+    <div class="hero-copy-block">
+        <p class="eyebrow">Tourism Intelligence</p>
+        <h2>What the network says about Tenkasi.</h2>
+    </div>
+    <div class="hero-side-card">
+        <p class="eyebrow">Bridge Place</p>
+        <h3>{{ data.bridge_place.label or "Pending graph output" }}</h3>
+        <p>Highest-betweenness destination across the place network.</p>
+    </div>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <h2>Interpretation</h2>
+        {% if data.insights %}
+        <p><strong>Influential place:</strong> {{ data.insights.most_influential_place.label }}</p>
+        <p><strong>Bridge place:</strong> {{ data.insights.bridge_place.label }}</p>
+        <p><strong>Central user:</strong> {{ data.insights.most_central_user.label }}</p>
+        {% else %}
+        <p>Run the pipeline to produce interpretation-ready insights.</p>
+        {% endif %}
+    </article>
+    <article class="card">
+        <h2>Rating vs Connectivity</h2>
+        {% if data.insights %}
+        <ul>
+            <li>Rating vs PageRank: {{ "%.4f"|format(data.insights.rating_centrality_correlation.pagerank or 0) }}</li>
+            <li>Rating vs Betweenness: {{ "%.4f"|format(data.insights.rating_centrality_correlation.betweenness_centrality or 0) }}</li>
+            <li>Rating vs Degree: {{ "%.4f"|format(data.insights.rating_centrality_correlation.degree_centrality or 0) }}</li>
+        </ul>
+        {% endif %}
+    </article>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <h2>Highly Rated Places</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Rating</th>
+                    <th>Total Ratings</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for place in data.insights.highly_rated_places or [] %}
+                <tr>
+                    <td>{{ place.place_name }}</td>
+                    <td>{{ place.rating }}</td>
+                    <td>{{ place.total_user_ratings }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article class="card">
+        <h2>Highly Connected Places</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Degree Centrality</th>
+                    <th>PageRank</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for place in data.insights.highly_connected_places or [] %}
+                <tr>
+                    <td>{{ place.label }}</td>
+                    <td>{{ "%.4f"|format(place.degree_centrality) }}</td>
+                    <td>{{ "%.4f"|format(place.pagerank) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+{% endblock %}

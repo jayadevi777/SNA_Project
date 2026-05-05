@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Community Detection | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <p class="eyebrow">Communities and Link Prediction</p>
+    <h2>Clusters, Hidden Structure, and Likely Co-Visits</h2>
+    <p>This section studies how tourism places group together and which disconnected places are most likely to become linked through shared visitor behavior.</p>
+</section>
+
+<section class="module-grid compact">
+    <article class="card module-card">
+        <h3>Girvan-Newman</h3>
+        <p>Edge-removal based community discovery for revealing bridges and major structural splits in the destination graph.</p>
+    </article>
+    <article class="card module-card">
+        <h3>Louvain</h3>
+        <p>Modularity-based clustering to identify tightly connected tourism communities such as religious or nature-focused zones.</p>
+    </article>
+    <article class="card module-card">
+        <h3>Link Prediction</h3>
+        <p>Common Neighbors, Jaccard, and Adamic-Adar estimate which place pairs are likely to become co-visited.</p>
+    </article>
+</section>
+
+{% if not data.analytics_available %}
+<section class="card accent">
+    <h2>Community Results Await Interaction Data</h2>
+    <p>Community and prediction outputs are ready to compute, but they depend on review-driven place-place links from Google Places data.</p>
+</section>
+{% endif %}
+
+<section class="grid two">
+    <article class="card">
+        <h2>Louvain Communities</h2>
+        {% if not data.place_communities.louvain %}
+        <p>No Louvain communities are available yet.</p>
+        {% endif %}
+        {% for community in data.place_communities.louvain or [] %}
+        <div class="community">
+            <p><strong>Cluster {{ loop.index }}</strong></p>
+            <p>{{ community|join(", ") }}</p>
+        </div>
+        {% endfor %}
+    </article>
+    <article class="card">
+        <h2>Girvan-Newman Split</h2>
+        {% if not data.place_communities.girvan_newman %}
+        <p>No Girvan-Newman split is available yet.</p>
+        {% endif %}
+        {% for community in data.place_communities.girvan_newman or [] %}
+        <div class="community">
+            <p><strong>Cluster {{ loop.index }}</strong></p>
+            <p>{{ community|join(", ") }}</p>
+        </div>
+        {% endfor %}
+    </article>
+</section>
+
+<section class="card">
+    <h2>Likely Future Co-Visits</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Place 1</th>
+                <th>Place 2</th>
+                <th>Common Neighbors</th>
+                <th>Jaccard</th>
+                <th>Adamic-Adar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if not data.predictions %}
+            <tr>
+                <td colspan="5">No link predictions are available yet. Run the Google Places collection and analysis pipeline first.</td>
+            </tr>
+            {% endif %}
+            {% for row in data.predictions %}
+            <tr>
+                <td>{{ row.node1_label }}</td>
+                <td>{{ row.node2_label }}</td>
+                <td>{{ row.common_neighbors }}</td>
+                <td>{{ "%.4f"|format(row.jaccard_coefficient) }}</td>
+                <td>{{ "%.4f"|format(row.adamic_adar) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

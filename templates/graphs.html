@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Graphs | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="page-head page-head-rich">
+    <div>
+        <p class="eyebrow">Interactive Graph Lab</p>
+        <h2>Visualize the Tenkasi tourism network clearly.</h2>
+        <p>Inspect community structure, node influence, and strong place-place ties with a cleaner graph workspace and export panel.</p>
+    </div>
+    <div class="head-metrics">
+        <div class="mini-metric">
+            <strong>{{ data.place_stats.nodes or 0 }}</strong>
+            <span>place nodes</span>
+        </div>
+        <div class="mini-metric">
+            <strong>{{ data.place_stats.edges or 0 }}</strong>
+            <span>weighted edges</span>
+        </div>
+    </div>
+</section>
+
+<section class="graph-workspace">
+    <aside class="graph-side panel">
+        <div class="section-title">
+            <h3>Graph Controls</h3>
+        </div>
+        <label class="graph-label">Search Node</label>
+        <input id="graph-search" class="search-input" type="search" placeholder="Search a place">
+        <label class="graph-label">Color Mode</label>
+        <div class="selection-chips graph-mode-group">
+            <button class="choice-chip active graph-color-chip" data-mode="community">Community</button>
+            <button class="choice-chip graph-color-chip" data-mode="category">Category</button>
+            <button class="choice-chip graph-color-chip" data-mode="taluk">Taluk</button>
+            <button class="choice-chip graph-color-chip" data-mode="pagerank">PageRank</button>
+        </div>
+        <label class="graph-label">Minimum Edge Strength: <span id="graph-edge-output">4.0</span></label>
+        <input id="graph-edge-threshold" class="range-input" type="range" min="2.5" max="8" step="0.5" value="4">
+        <label class="toggle-row">
+            <input id="graph-label-toggle" type="checkbox">
+            <span>Show all node labels</span>
+        </label>
+        <button id="graph-reset" class="btn secondary">Reset Graph</button>
+
+        <div class="section-title section-gap">
+            <h3>Selected Node</h3>
+        </div>
+        <div id="graph-node-detail" class="graph-detail-card">
+            <h4>Click a node</h4>
+            <p class="muted">The node details, network role, and community context will appear here.</p>
+        </div>
+    </aside>
+
+    <div class="graph-main panel">
+        <div class="graph-banner">
+            <span class="tag">Curated visual mode</span>
+            <span class="muted">Default view shows stronger ties first so the network stays readable.</span>
+        </div>
+        <div id="graph-view" class="graph-canvas graph-canvas-large" data-graph='{{ data.graph_data | tojson }}'></div>
+    </div>
+</section>
+
+<section class="content-grid two">
+    <article class="panel">
+        <div class="section-title">
+            <h3>Top Connected Nodes</h3>
+        </div>
+        <div class="list-stack">
+            {% for row in data.centrality_views.degree[:10] %}
+            <div class="list-item">
+                <div>
+                    <strong>{{ row.label }}</strong>
+                    <div class="muted">Degree centrality</div>
+                </div>
+                <div class="metric-inline">
+                    <span>{{ "%.4f"|format(row.degree_centrality or 0) }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    <article class="panel">
+        <div class="section-title">
+            <h3>Graph Assets</h3>
+        </div>
+        <div class="mini-links">
+            <a href="{{ artifact_url(data.graph_files.place_json) or '#' }}">Download Graph JSON</a>
+            <a href="{{ artifact_url(data.graph_files.place_gexf) or '#' }}">Download GEXF</a>
+            <a href="{{ artifact_url(data.exports.neo4j_places) or '#' }}">Neo4j Place Nodes</a>
+            <a href="{{ artifact_url(data.exports.neo4j_reviews) or '#' }}">Neo4j Reviewed Edges</a>
+            <a href="{{ artifact_url(data.exports.neo4j_cypher) or '#' }}">Import Cypher</a>
+        </div>
+    </article>
+</section>
+{% endblock %}

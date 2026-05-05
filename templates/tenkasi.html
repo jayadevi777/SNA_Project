@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Tenkasi | Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero-panel tight">
+    <div class="hero-copy-block">
+        <p class="eyebrow">Study Area</p>
+        <h2>Tenkasi place intelligence</h2>
+        <p class="hero-subtle">Discover signature falls, scenic dams, shrines, villages, and lesser-known Tenkasi destinations while tracking which places dominate the tourism network.</p>
+    </div>
+    <div class="hero-side-card">
+        <p class="eyebrow">Live Google Ratings</p>
+        <h3>{% if data.places_have_ratings %}Available{% else %}Not loaded yet{% endif %}</h3>
+        <p>{% if data.places_have_ratings %}Place cards are using Google-sourced rating fields.{% else %}Add the Google Places API key and rerun collection to fill ratings and review counts.{% endif %}</p>
+    </div>
+</section>
+
+<section class="stat-grid">
+    <article class="metric-card emphasis">
+        <span>Most Visited</span>
+        {% if data.most_visited_place %}
+        <strong>{{ data.most_visited_place.place_name }}</strong>
+        <small>
+            {% if data.most_visited_place.total_user_ratings %}{{ data.most_visited_place.total_user_ratings }} reviews{% endif %}
+            {% if data.most_visited_place.rating %} · {{ data.most_visited_place.rating }} rating{% endif %}
+        </small>
+        {% else %}
+        <strong>Waiting for live Google data</strong>
+        {% endif %}
+    </article>
+    <article class="metric-card"><span>Places</span><strong>{{ data.places|length }}</strong></article>
+    <article class="metric-card"><span>Reviews</span><strong>{{ data.reviews|length }}</strong></article>
+    <article class="metric-card"><span>Categories</span><strong>{{ data.category_summary|length }}</strong></article>
+</section>
+
+<section class="places-toolbar">
+    <input id="place-search" class="search-input" type="search" placeholder="Search Tenkasi places">
+    <div class="filter-row">
+        <button class="filter-chip active" data-filter="all">All</button>
+        {% for item in data.category_summary[:8] %}
+        <button class="filter-chip" data-filter="{{ item.category|lower }}">{{ item.category }}</button>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="card">
+    <div class="section-head">
+        <h2>Place Explorer</h2>
+        <div class="action-row compact">
+            <a class="text-link" href="/analysis">SNA rankings</a>
+            <a class="text-link" href="/community">Co-visit patterns</a>
+        </div>
+    </div>
+    <div class="place-grid searchable-grid">
+        {% for place in data.featured_places if data.featured_places %}
+        <article class="place-card search-card" data-category="{{ (place.category or 'unknown')|lower }}" data-name="{{ (place.place_name or '')|lower }}">
+            <div class="place-card-top">
+                <p class="place-category">{{ place.category }}</p>
+                {% if place.rating %}
+                <span class="rating-pill">{{ place.rating }}</span>
+                {% endif %}
+            </div>
+            <h3>{{ place.place_name }}</h3>
+            {% if place.total_user_ratings %}
+            <p>{{ place.total_user_ratings }} Google ratings</p>
+            {% endif %}
+            {% if place.formatted_address %}
+            <p class="muted-line">{{ place.formatted_address }}</p>
+            {% endif %}
+            {% if place.google_maps_url %}
+            <a class="text-link" href="{{ place.google_maps_url }}" target="_blank" rel="noopener">Open in Maps</a>
+            {% endif %}
+        </article>
+        {% endfor %}
+        {% for place in data.places if not data.featured_places %}
+        <article class="place-card search-card" data-category="{{ (place.category or 'unknown')|lower }}" data-name="{{ (place.place_name or '')|lower }}">
+            <div class="place-card-top">
+                <p class="place-category">{{ place.category }}</p>
+                {% if place.rating %}
+                <span class="rating-pill">{{ place.rating }}</span>
+                {% endif %}
+            </div>
+            <h3>{{ place.place_name }}</h3>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

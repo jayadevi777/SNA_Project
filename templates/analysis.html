@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Network Analysis | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="hero-panel tight">
+    <div class="hero-copy-block">
+        <p class="eyebrow">SNA Control Room</p>
+        <h2>Influence, bridges, density, clustering, and structural dominance.</h2>
+    </div>
+    <div class="hero-side-card">
+        <p class="eyebrow">Pipeline Status</p>
+        <h3>{% if data.analytics_available %}SNA ready{% else %}Awaiting live reviews{% endif %}</h3>
+        <p>{% if data.analytics_available %}Rankings and metrics are populated from the current graph outputs.{% else %}Centrality and community results will fill in after Google review data is collected.{% endif %}</p>
+    </div>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <h2>Place Network Statistics</h2>
+        <ul>
+            <li>Nodes: {{ data.place_stats.nodes or 0 }}</li>
+            <li>Edges: {{ data.place_stats.edges or 0 }}</li>
+            <li>Density: {{ "%.4f"|format(data.place_stats.density or 0) }}</li>
+            <li>Average clustering: {{ "%.4f"|format(data.place_stats.average_clustering or 0) }}</li>
+            <li>Average shortest path: {{ "%.4f"|format(data.place_stats.average_shortest_path_length or 0) }}</li>
+            <li>Power-law alpha: {{ "%.4f"|format(data.place_stats.power_law_alpha or 0) }}</li>
+        </ul>
+    </article>
+    <article class="card">
+        <h2>User Network Statistics</h2>
+        <ul>
+            <li>Nodes: {{ data.user_stats.nodes or 0 }}</li>
+            <li>Edges: {{ data.user_stats.edges or 0 }}</li>
+            <li>Density: {{ "%.4f"|format(data.user_stats.density or 0) }}</li>
+            <li>Average clustering: {{ "%.4f"|format(data.user_stats.average_clustering or 0) }}</li>
+            <li>Average shortest path: {{ "%.4f"|format(data.user_stats.average_shortest_path_length or 0) }}</li>
+        </ul>
+    </article>
+</section>
+
+<section class="grid two">
+    <article class="card">
+        <h2>Top Place Rankings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Avg Rank</th>
+                    <th>PageRank</th>
+                    <th>Betweenness</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not data.place_rankings %}
+                <tr>
+                    <td colspan="4">No centrality rankings are available yet. Run the Google Places collection and analysis pipeline to populate this table.</td>
+                </tr>
+                {% endif %}
+                {% for row in data.place_rankings %}
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ "%.2f"|format(row.average_rank) }}</td>
+                    <td>{{ "%.4f"|format(row.pagerank) }}</td>
+                    <td>{{ "%.4f"|format(row.betweenness_centrality) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article class="card">
+        <h2>Visual Analytics</h2>
+        {% if image_url(data.plots.place_centrality) %}
+        <img src="{{ image_url(data.plots.place_centrality) }}" alt="Centrality plot">
+        {% endif %}
+        {% if image_url(data.plots.place_degree) %}
+        <img src="{{ image_url(data.plots.place_degree) }}" alt="Degree distribution plot">
+        {% endif %}
+        {% if not image_url(data.plots.place_centrality) and not image_url(data.plots.place_degree) %}
+        <p>Plots will appear here after the analysis pipeline generates them.</p>
+        {% endif %}
+    </article>
+</section>
+{% endblock %}

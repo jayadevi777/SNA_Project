@@ -1,0 +1,418 @@
+{
+  "degree_centrality": [
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "degree_centrality": 0.02197802197802198
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "degree_centrality": 0.02197802197802198
+    },
+    {
+      "label": "Abdul Rahman",
+      "node": "user::abdul_rahman",
+      "degree_centrality": 0.02197802197802198
+    },
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "degree_centrality": 0.019230769230769232
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "degree_centrality": 0.016483516483516484
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "degree_centrality": 0.016483516483516484
+    },
+    {
+      "label": "Ganesh M",
+      "node": "user::ganesh_m",
+      "degree_centrality": 0.016483516483516484
+    },
+    {
+      "label": "Muthukrishnan Shenbagam",
+      "node": "user::muthukrishnan_shenbagam",
+      "degree_centrality": 0.016483516483516484
+    },
+    {
+      "label": "Mani Kandan",
+      "node": "user::mani_kandan",
+      "degree_centrality": 0.016483516483516484
+    },
+    {
+      "label": "Aneesh Antony",
+      "node": "user::aneesh_antony",
+      "degree_centrality": 0.016483516483516484
+    }
+  ],
+  "betweenness_centrality": [
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "betweenness_centrality": 0.017898080827929524
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "betweenness_centrality": 0.012345632359387517
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "betweenness_centrality": 0.010943664313678068
+    },
+    {
+      "label": "Hassan Sowkath",
+      "node": "user::hassan_sowkath",
+      "betweenness_centrality": 0.009528470154329852
+    },
+    {
+      "label": "Muthukrishnan Shenbagam",
+      "node": "user::muthukrishnan_shenbagam",
+      "betweenness_centrality": 0.006953156884381093
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "betweenness_centrality": 0.006937411511001607
+    },
+    {
+      "label": "Mani Kandan",
+      "node": "user::mani_kandan",
+      "betweenness_centrality": 0.0065741882405274035
+    },
+    {
+      "label": "Ganesh M",
+      "node": "user::ganesh_m",
+      "betweenness_centrality": 0.005250767114591048
+    },
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "betweenness_centrality": 0.005195973215230436
+    },
+    {
+      "label": "Mukilan S",
+      "node": "user::mukilan_s",
+      "betweenness_centrality": 0.003992396874102514
+    }
+  ],
+  "closeness_centrality": [
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "closeness_centrality": 0.06321768119520929
+    },
+    {
+      "label": "Hassan Sowkath",
+      "node": "user::hassan_sowkath",
+      "closeness_centrality": 0.05755880947696805
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "closeness_centrality": 0.0552960552960553
+    },
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "closeness_centrality": 0.05397001080454318
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "closeness_centrality": 0.05307899647522289
+    },
+    {
+      "label": "Ramesh Kumar",
+      "node": "user::ramesh_kumar",
+      "closeness_centrality": 0.052582931087603986
+    },
+    {
+      "label": "Ganesh M",
+      "node": "user::ganesh_m",
+      "closeness_centrality": 0.05233835931510351
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "closeness_centrality": 0.05233835931510351
+    },
+    {
+      "label": "Mukilan S",
+      "node": "user::mukilan_s",
+      "closeness_centrality": 0.051975737887978074
+    },
+    {
+      "label": "Pratheesh Harish",
+      "node": "user::pratheesh_harish",
+      "closeness_centrality": 0.051736768978148294
+    }
+  ],
+  "eigenvector_centrality": [
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Ganesh M",
+      "node": "user::ganesh_m",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Hari Trivedi",
+      "node": "user::hari_trivedi",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Hassan Sowkath",
+      "node": "user::hassan_sowkath",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Ramesh Kumar",
+      "node": "user::ramesh_kumar",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Akhilesh Prajapati",
+      "node": "user::akhilesh_prajapati",
+      "eigenvector_centrality": 0.0
+    }
+  ],
+  "katz_centrality": [
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "katz_centrality": 0.03924020667829717
+    },
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "katz_centrality": 0.03923255868080444
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "katz_centrality": 0.03921352674102423
+    },
+    {
+      "label": "Abdul Rahman",
+      "node": "user::abdul_rahman",
+      "katz_centrality": 0.039194574105698696
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "katz_centrality": 0.03849626253416748
+    },
+    {
+      "label": "Hari Trivedi",
+      "node": "user::hari_trivedi",
+      "katz_centrality": 0.038485168871112634
+    },
+    {
+      "label": "Ganesh M",
+      "node": "user::ganesh_m",
+      "katz_centrality": 0.038477364875101214
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "katz_centrality": 0.03847734789016907
+    },
+    {
+      "label": "Mani Kandan",
+      "node": "user::mani_kandan",
+      "katz_centrality": 0.038477271005996176
+    },
+    {
+      "label": "Muthukrishnan Shenbagam",
+      "node": "user::muthukrishnan_shenbagam",
+      "katz_centrality": 0.03847345644838266
+    }
+  ],
+  "pagerank": [
+    {
+      "label": "Abdul Rahman",
+      "node": "user::abdul_rahman",
+      "pagerank": 0.004256377415556313
+    },
+    {
+      "label": "Shotsby Senthil",
+      "node": "user::shotsby_senthil",
+      "pagerank": 0.0038294381741797944
+    },
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "pagerank": 0.003635648524505134
+    },
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "pagerank": 0.003572655652550686
+    },
+    {
+      "label": "Arjuka",
+      "node": "user::arjuka",
+      "pagerank": 0.003294832314531827
+    },
+    {
+      "label": "Anandtvl",
+      "node": "user::anandtvl",
+      "pagerank": 0.0031660513922676286
+    },
+    {
+      "label": "Aneesh Antony",
+      "node": "user::aneesh_antony",
+      "pagerank": 0.003141900841344549
+    },
+    {
+      "label": "Muthukrishnan Shenbagam",
+      "node": "user::muthukrishnan_shenbagam",
+      "pagerank": 0.0030060361577779675
+    },
+    {
+      "label": "Amol Mande",
+      "node": "user::amol_mande",
+      "pagerank": 0.0029407957322287893
+    },
+    {
+      "label": "Akhil Raj",
+      "node": "user::akhil_raj",
+      "pagerank": 0.0029316869456414065
+    }
+  ],
+  "hits_hub": [
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "hits_hub": 0.07187803638494357
+    },
+    {
+      "label": "Hari Trivedi",
+      "node": "user::hari_trivedi",
+      "hits_hub": 0.0517476006718607
+    },
+    {
+      "label": "Ramesh Kumar",
+      "node": "user::ramesh_kumar",
+      "hits_hub": 0.05076492024139067
+    },
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "hits_hub": 0.04739673718869285
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "hits_hub": 0.03993912610035686
+    },
+    {
+      "label": "Pratheesh Harish",
+      "node": "user::pratheesh_harish",
+      "hits_hub": 0.028990124663229585
+    },
+    {
+      "label": "Raj P",
+      "node": "user::raj_p",
+      "hits_hub": 0.02793325842324716
+    },
+    {
+      "label": "Athulya Vijayan",
+      "node": "user::athulya_vijayan",
+      "hits_hub": 0.02793325842324716
+    },
+    {
+      "label": "Akhilesh Prajapati",
+      "node": "user::akhilesh_prajapati",
+      "hits_hub": 0.0272956278436178
+    },
+    {
+      "label": "Shibin As",
+      "node": "user::shibin_as",
+      "hits_hub": 0.024174030746505704
+    }
+  ],
+  "hits_authority": [
+    {
+      "label": "Raghu B",
+      "node": "user::raghu_b",
+      "hits_authority": 0.07187803638494353
+    },
+    {
+      "label": "Hari Trivedi",
+      "node": "user::hari_trivedi",
+      "hits_authority": 0.05174760067186067
+    },
+    {
+      "label": "Ramesh Kumar",
+      "node": "user::ramesh_kumar",
+      "hits_authority": 0.05076492024139071
+    },
+    {
+      "label": "Rijas Galleria",
+      "node": "user::rijas_galleria",
+      "hits_authority": 0.04739673718869282
+    },
+    {
+      "label": "Sarath Kumar S",
+      "node": "user::sarath_kumar_s",
+      "hits_authority": 0.03993912610035685
+    },
+    {
+      "label": "Pratheesh Harish",
+      "node": "user::pratheesh_harish",
+      "hits_authority": 0.02899012466322958
+    },
+    {
+      "label": "Raj P",
+      "node": "user::raj_p",
+      "hits_authority": 0.027933258423247176
+    },
+    {
+      "label": "Athulya Vijayan",
+      "node": "user::athulya_vijayan",
+      "hits_authority": 0.027933258423247165
+    },
+    {
+      "label": "Akhilesh Prajapati",
+      "node": "user::akhilesh_prajapati",
+      "hits_authority": 0.027295627843617814
+    },
+    {
+      "label": "Shibin As",
+      "node": "user::shibin_as",
+      "hits_authority": 0.02417403074650571
+    }
+  ]
+}

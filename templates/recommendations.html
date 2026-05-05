@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}Recommendations | Tenkasi Tourism SNA{% endblock %}
+{% block content %}
+<section class="studio-hero">
+    <div class="studio-copy">
+        <p class="eyebrow">Travel Intelligence</p>
+        <h2>Design a Tenkasi travel plan from the tourism network.</h2>
+        <p class="subtitle">Pick interests, filter by taluk, tune travel constraints, and let the graph surface better destinations and stronger itineraries.</p>
+    </div>
+    <div class="studio-stats">
+        <div class="mini-metric">
+            <strong>{{ data.recommendation_places|length }}</strong>
+            <span>ranked destinations</span>
+        </div>
+        <div class="mini-metric">
+            <strong>{{ data.top_predictions|length }}</strong>
+            <span>predicted co-visits</span>
+        </div>
+        <div class="mini-metric">
+            <strong>{{ data.taluk_summary|length }}</strong>
+            <span>taluk groups</span>
+        </div>
+    </div>
+</section>
+
+<section class="studio-board">
+    <aside class="studio-rail panel panel-glow">
+        <div class="studio-section">
+            <h3>Trip Lens</h3>
+            <p class="muted">Tell the system what kind of Tenkasi experience you want.</p>
+        </div>
+
+        <div class="planner-field">
+            <label>Interests</label>
+            <div class="selection-chips multi" id="interest-chips">
+                {% for label in ["Temple","Waterfalls","Dam","Park/Garden","Wildlife Sanctuary","Viewpoint/Hills","Museum","Memorial","Tourist Attraction"] %}
+                <button class="choice-chip interest-chip" data-interest="{{ label }}">{{ label }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="planner-field">
+            <label>Travel Mode</label>
+            <div class="selection-chips" id="transport-chips">
+                <button class="choice-chip active transport-chip" data-transport="car">Car</button>
+                <button class="choice-chip transport-chip" data-transport="bus">Bus</button>
+                <button class="choice-chip transport-chip" data-transport="bike">Bike</button>
+            </div>
+        </div>
+
+        <div class="planner-field">
+            <label>Taluk Focus</label>
+            <select id="taluk-filter" class="select-input">
+                <option value="All">Any Taluk</option>
+                {% for taluk in data.taluk_summary %}
+                <option value="{{ taluk.taluk }}">{{ taluk.taluk }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="planner-field">
+            <label>Exploration Radius: <span id="distance-output">40 km</span></label>
+            <input id="distance-filter" class="range-input" type="range" min="10" max="80" step="5" value="40">
+        </div>
+
+        <div class="planner-field">
+            <label>Result Strategy</label>
+            <select id="sort-filter" class="select-input">
+                <option value="recommendation_score">Recommendation Score</option>
+                <option value="rating">Rating</option>
+                <option value="pagerank">PageRank</option>
+                <option value="betweenness_centrality">Betweenness</option>
+                <option value="connection_count">Connections</option>
+            </select>
+        </div>
+
+        <div class="planner-field">
+            <label>Search</label>
+            <input id="recommendation-search" class="search-input" type="search" placeholder="Place, theme, taluk">
+        </div>
+
+        <div class="planner-field">
+            <label>Advanced Options</label>
+            <label class="toggle-row">
+                <input id="remote-toggle" type="checkbox" checked>
+                <span>Include remote gems and hill-edge places</span>
+            </label>
+            <label class="toggle-row">
+                <input id="highly-connected-toggle" type="checkbox">
+                <span>Prioritize highly connected places</span>
+            </label>
+        </div>
+
+        <div class="planner-field">
+            <label>Quick Category Filter</label>
+            <div class="choice-row category-pills">
+                {% for item in data.category_summary[:10] %}
+                <button class="soft-pill rec-chip" data-category="{{ item.category }}">{{ item.category }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button id="find-recommendations" class="btn primary studio-action">Refresh Recommendations</button>
+    </aside>
+
+    <div class="studio-main">
+        <section class="studio-results panel panel-accent">
+            <div class="recommendation-meta">
+                <div class="result-heading">
+                    <h3 id="recommendation-title">Top Tenkasi recommendations</h3>
+                    <p id="recommendation-subtitle" class="muted">Interaction-rich destinations selected from the live graph.</p>
+                </div>
+            </div>
+            <div id="recommendation-results" class="recommendation-masonry"
+                data-places='{{ data.recommendation_places | tojson }}'></div>
+        </section>
+
+        <section class="itinerary-studio panel">
+            <div class="studio-section dual">
+                <div>
+                    <p class="eyebrow">Multi-Day Builder</p>
+                    <h3 id="itinerary-title">Graph-driven itinerary composer</h3>
+                </div>
+                <button id="generate-itinerary" class="btn primary">Generate Itinerary</button>
+            </div>
+
+            <div class="itinerary-toolbar">
+                <div class="planner-field">
+                    <label>Trip Duration</label>
+                    <div class="selection-chips" id="duration-chips">
+                        <button class="choice-chip itinerary-chip active" data-duration="1 Day">1 Day</button>
+                        <button class="choice-chip itinerary-chip" data-duration="2 Days">2 Days</button>
+                        <button class="choice-chip itinerary-chip" data-duration="3 Days">3 Days</button>
+                    </div>
+                </div>
+                <div class="planner-field">
+                    <label>Travel Mode</label>
+                    <div class="selection-chips" id="itinerary-transport-chips">
+                        <button class="choice-chip itinerary-transport active" data-transport="car">Car</button>
+                        <button class="choice-chip itinerary-transport" data-transport="bus">Bus</button>
+                        <button class="choice-chip itinerary-transport" data-transport="bike">Bike</button>
+                    </div>
+                </div>
+                <div class="planner-field">
+                    <label>Planning Style</label>
+                    <select id="itinerary-style" class="select-input">
+                        <option value="balanced">Balanced Mix</option>
+                        <option value="nature">Nature Heavy</option>
+                        <option value="spiritual">Temple Trail</option>
+                        <option value="connectivity">Network Hubs First</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="planner-field">
+                <label>Taluks to Include</label>
+                <div class="selection-chips multi" id="itinerary-taluk-chips">
+                    {% for taluk in data.taluk_summary %}
+                    <button class="choice-chip taluk-choice active" data-taluk="{{ taluk.taluk }}">{{ taluk.taluk }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="planner-field">
+                <label>Category Blend</label>
+                <div class="selection-chips multi" id="itinerary-interest-chips">
+                    {% for label in ["Temple","Waterfalls","Dam","Park/Garden","Wildlife Sanctuary","Viewpoint/Hills","Museum","Memorial","Tourist Attraction"] %}
+                    <button class="choice-chip itinerary-interest active" data-interest="{{ label }}">{{ label }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="itinerary-view" class="itinerary-flow"
+                data-itineraries='{{ data.itineraries | tojson }}'
+                data-places='{{ data.recommendation_places | tojson }}'></div>
+        </section>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,374 @@
+[
+    {
+        "name": "Five Falls",
+        "category": "attraction",
+        "latitude": 8.9310935,
+        "longitude": 77.2382226
+    },
+    {
+        "name": "Courtallam Falls",
+        "category": "attraction",
+        "latitude": 8.9296643,
+        "longitude": 77.2692338
+    },
+    {
+        "name": "Parankunrapuram Church",
+        "category": "place_of_worship",
+        "latitude": 8.9622744,
+        "longitude": 77.4564276
+    },
+    {
+        "name": "Mutharamman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.962905,
+        "longitude": 77.4566609
+    },
+    {
+        "name": "St. Antony's Church",
+        "category": "place_of_worship",
+        "latitude": 8.9154563,
+        "longitude": 77.3814884
+    },
+    {
+        "name": "C.S.I. Christ Church",
+        "category": "place_of_worship",
+        "latitude": 8.9162671,
+        "longitude": 77.381247
+    },
+    {
+        "name": "Murugan Templa",
+        "category": "place_of_worship",
+        "latitude": 8.9219986,
+        "longitude": 77.3487929
+    },
+    {
+        "name": "Arulmigu Valli Thevasena Sameda Sri Subramaniya Swamy Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9147945,
+        "longitude": 77.3852453
+    },
+    {
+        "name": "Muppidathi Amman Koil",
+        "category": "place_of_worship",
+        "latitude": 9.3063954,
+        "longitude": 77.5490272
+    },
+    {
+        "name": "Piliyar Kovil",
+        "category": "place_of_worship",
+        "latitude": 8.9973114,
+        "longitude": 77.3850614
+    },
+    {
+        "name": "Nafees",
+        "category": "garden",
+        "latitude": 9.0696278,
+        "longitude": 77.2105247
+    },
+    {
+        "name": "S Bend",
+        "category": "attraction",
+        "latitude": 9.0075045,
+        "longitude": 77.1674182
+    },
+    {
+        "name": "Varadaraja Perumal Kovil",
+        "category": "place_of_worship",
+        "latitude": 8.9580636,
+        "longitude": 77.2781135
+    },
+    {
+        "name": "Jamia Masjid and Islamic Center",
+        "category": "place_of_worship",
+        "latitude": 8.9332022,
+        "longitude": 77.2679537
+    },
+    {
+        "name": "Arulmigu Thiruvilanji Kumarar Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9482552,
+        "longitude": 77.27488
+    },
+    {
+        "name": "C.S.I. Good Shepherd Church",
+        "category": "place_of_worship",
+        "latitude": 8.8678728,
+        "longitude": 77.4942695
+    },
+    {
+        "name": "Arulmigu Sri Mariyamman Kovil",
+        "category": "place_of_worship",
+        "latitude": 8.8676844,
+        "longitude": 77.4967723
+    },
+    {
+        "name": "\u0b9c\u0bbe\u0bae\u0bbf\u0bb5\u0bc1\u0bb2\u0bcd \u0b85\u0ba9\u0bcd\u0bb5\u0bbe\u0bb0\u0bcd \u0b9c\u0bc2\u0bae\u0bcd\u0b86 \u0baa\u0bb3\u0bcd\u0bb3\u0bbf",
+        "category": "place_of_worship",
+        "latitude": 9.0797074,
+        "longitude": 77.3508275
+    },
+    {
+        "name": "Utchimahali Amman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9355812,
+        "longitude": 77.4513877
+    },
+    {
+        "name": "Utchimahali Amman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9379847,
+        "longitude": 77.4489892
+    },
+    {
+        "name": "Esaki Amman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9286546,
+        "longitude": 77.4501277
+    },
+    {
+        "name": "R C Church",
+        "category": "place_of_worship",
+        "latitude": 8.9367926,
+        "longitude": 77.4474866
+    },
+    {
+        "name": "Sivan temple",
+        "category": "place_of_worship",
+        "latitude": 8.9312943,
+        "longitude": 77.4484004
+    },
+    {
+        "name": "government hostel for boys",
+        "category": "hostel",
+        "latitude": 8.9525921,
+        "longitude": 77.4430641
+    },
+    {
+        "name": "church",
+        "category": "place_of_worship",
+        "latitude": 8.9685108,
+        "longitude": 77.4336542
+    },
+    {
+        "name": "\u0bb5\u0bbf\u0ba8\u0bbe\u0baf\u0b95\u0bb0\u0bcd \u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd",
+        "category": "place_of_worship",
+        "latitude": 8.8802981,
+        "longitude": 77.3919402
+    },
+    {
+        "name": "\u0bb0\u0bbe\u0bae\u0bb0\u0bcd \u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd",
+        "category": "place_of_worship",
+        "latitude": 8.8797757,
+        "longitude": 77.3924243
+    },
+    {
+        "name": "Arulmigu Sri Durga Amman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9960679,
+        "longitude": 77.2097097
+    },
+    {
+        "name": "Arulmigu Devi Shri Muthumari Amman temple",
+        "category": "place_of_worship",
+        "latitude": 8.9903719,
+        "longitude": 77.2227076
+    },
+    {
+        "name": "Tiger falls",
+        "category": "attraction",
+        "latitude": 8.9270403,
+        "longitude": 77.2778441
+    },
+    {
+        "name": "Kalathi Vinayagar Temple",
+        "category": "place_of_worship",
+        "latitude": 8.8525382,
+        "longitude": 77.4834841
+    },
+    {
+        "name": "Mariyamman Temple",
+        "category": "place_of_worship",
+        "latitude": 8.852172,
+        "longitude": 77.4828934
+    },
+    {
+        "name": "Thalavai Sudalai Madan Koil",
+        "category": "place_of_worship",
+        "latitude": 8.8517946,
+        "longitude": 77.4847602
+    },
+    {
+        "name": "CSI Church",
+        "category": "place_of_worship",
+        "latitude": 8.8524625,
+        "longitude": 77.4810029
+    },
+    {
+        "name": "Vannathamman Koil",
+        "category": "place_of_worship",
+        "latitude": 8.8534696,
+        "longitude": 77.4834277
+    },
+    {
+        "name": "Nochadi Sudalai Madan Koil",
+        "category": "place_of_worship",
+        "latitude": 8.849473,
+        "longitude": 77.4875861
+    },
+    {
+        "name": "Ayya Koil",
+        "category": "place_of_worship",
+        "latitude": 8.8517416,
+        "longitude": 77.4809686
+    },
+    {
+        "name": "Hotel Tamilnadu Unit 2",
+        "category": "hotel",
+        "latitude": 8.9406157,
+        "longitude": 77.2814713
+    },
+    {
+        "name": "Periyandavar Temple",
+        "category": "place_of_worship",
+        "latitude": 8.9210276,
+        "longitude": 77.397268
+    },
+    {
+        "name": "Folk Arts Site Museum, Courtallam",
+        "category": "museum",
+        "latitude": 8.9324821,
+        "longitude": 77.2720131
+    },
+    {
+        "name": "Rajathottam view Point",
+        "category": "viewpoint",
+        "latitude": 8.9508026,
+        "longitude": 77.1978829
+    },
+    {
+        "name": "Sri Veerabagu Vinayagar temple",
+        "category": "place_of_worship",
+        "latitude": 8.9721991,
+        "longitude": 77.3889767
+    },
+    {
+        "name": "A.G. Church",
+        "category": "place_of_worship",
+        "latitude": 8.9929537,
+        "longitude": 77.2170385
+    },
+    {
+        "name": "Zion A.G. Church",
+        "category": "place_of_worship",
+        "latitude": 8.9840937,
+        "longitude": 77.2353636
+    },
+    {
+        "name": "Sri Siddheshwari Peetham",
+        "category": "place_of_worship",
+        "latitude": 8.9366362,
+        "longitude": 77.2701952
+    },
+    {
+        "name": "Arulmigu Sri Veerapandi Amman temple",
+        "category": "place_of_worship",
+        "latitude": 8.939944,
+        "longitude": 77.2857508
+    },
+    {
+        "name": "St. John's Church",
+        "category": "place_of_worship",
+        "latitude": 8.8618096,
+        "longitude": 77.4972785
+    },
+    {
+        "name": "Arulmigu Sri Pathirakali Amman temple",
+        "category": "place_of_worship",
+        "latitude": 8.8701471,
+        "longitude": 77.5027764
+    },
+    {
+        "name": "Arulmigu Sri Muppudathi Amman temple",
+        "category": "place_of_worship",
+        "latitude": 8.9207052,
+        "longitude": 77.3972174
+    },
+    {
+        "name": "Maipparai Hill Temple",
+        "category": "place_of_worship",
+        "latitude": 9.2424623,
+        "longitude": 77.7274146
+    },
+    {
+        "name": "Padikattu Malai",
+        "category": "peak",
+        "latitude": 8.9507863,
+        "longitude": 77.198106
+    },
+    {
+        "name": "Sri Pampatti Sidhar Jeeva Samadhi Peedam",
+        "category": "place_of_worship",
+        "latitude": 9.1704292,
+        "longitude": 77.5294113
+    },
+    {
+        "name": "\u0bae\u0b95\u0bcd\u0b95\u0ba4\u0bc2\u0bae\u0bcd \u0b9e\u0bbe\u0ba9\u0bbf\u0baf\u0bbe\u0bb0\u0bcd \u0b9c\u0bc1\u0bae\u0bcd\u0bae\u0bbe \u0baa\u0bb3\u0bcd\u0bb3\u0bbf\u0bb5\u0bbe\u0b9a\u0bb2\u0bcd",
+        "category": "place_of_worship",
+        "latitude": 9.0807683,
+        "longitude": 77.3460429
+    },
+    {
+        "name": "Masjid Al Aqsa",
+        "category": "place_of_worship",
+        "latitude": 9.0853773,
+        "longitude": 77.3420079
+    },
+    {
+        "name": "\u0b9a\u0bbf\u0bb0\u0bbe\u0b9c\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0ba9\u0bc0\u0bb0\u0bcd \u0bae\u0ba4\u0bb0\u0bb8\u0bbe",
+        "category": "place_of_worship",
+        "latitude": 9.0818117,
+        "longitude": 77.3503014
+    },
+    {
+        "name": "Nallur Jumma Masjid",
+        "category": "place_of_worship",
+        "latitude": 9.0877111,
+        "longitude": 77.3382664
+    },
+    {
+        "name": "Madina nagar pallivasal",
+        "category": "place_of_worship",
+        "latitude": 9.0816265,
+        "longitude": 77.343923
+    },
+    {
+        "name": "Naina Muhammad Periya Kuthba Pallivasal (Jumma Masjid)",
+        "category": "place_of_worship",
+        "latitude": 9.0803734,
+        "longitude": 77.3477098
+    },
+    {
+        "name": "Ayyapuram Naina Muhammad  Jumma Palli",
+        "category": "place_of_worship",
+        "latitude": 9.081923,
+        "longitude": 77.3469991
+    },
+    {
+        "name": "\u0b8e\u0bae \u0ba4\u0bb0\u0bcd\u0bae\u0bb0\u0bbe\u0b9c\u0bbe  \u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc8 (\u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd )   Yama Dharmaraja Kottai/Temple  (\u0b8e\u0bae\u0ba9\u0bcd,\u0b95\u0bbe\u0bb2\u0ba9\u0bcd &\u0ba4\u0bc2\u0ba4\u0ba9\u0bcd  \u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd )   (Yaman, Kala & Thoothan temple)",
+        "category": "place_of_worship",
+        "latitude": 9.379141,
+        "longitude": 77.4399906
+    },
+    {
+        "name": "Tiger falls",
+        "category": "attraction",
+        "latitude": 8.9275544,
+        "longitude": 77.2783377
+    },
+    {
+        "name": "Main Falls",
+        "category": "attraction",
+        "latitude": 8.9292661,
+        "longitude": 77.269143
+    }
+]

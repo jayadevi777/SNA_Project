@@ -1,0 +1,418 @@
+{
+  "degree_centrality": [
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "degree_centrality": 0.4968553459119497
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "degree_centrality": 0.49056603773584906
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "degree_centrality": 0.49056603773584906
+    },
+    {
+      "label": "Temple",
+      "node": "place::ChIJ59WpP4UpBDsR5oYgTYmyhno",
+      "degree_centrality": 0.49056603773584906
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "degree_centrality": 0.48427672955974843
+    },
+    {
+      "label": "Agasthiyar Falls",
+      "node": "place::ChIJs-vSFNY3BDsR89RjoQRctKQ",
+      "degree_centrality": 0.48427672955974843
+    },
+    {
+      "label": "Falls",
+      "node": "place::ChIJNd6V4hQpBDsRdin5ED4v_gk",
+      "degree_centrality": 0.48427672955974843
+    },
+    {
+      "label": "Mottai Dam",
+      "node": "place::ChIJ03S4wKcqBDsR8SJ8qShQuVA",
+      "degree_centrality": 0.48427672955974843
+    },
+    {
+      "label": "Shenbaga Devi Waterfalls",
+      "node": "place::ChIJ695M_corBDsRnPDPpXIaNdY",
+      "degree_centrality": 0.48427672955974843
+    },
+    {
+      "label": "Erumai Chavadi Waterfalls",
+      "node": "place::ChIJx3oBXj-HBjsRE_nhoTDm7QE",
+      "degree_centrality": 0.48427672955974843
+    }
+  ],
+  "betweenness_centrality": [
+    {
+      "label": "Temple",
+      "node": "place::ChIJ59WpP4UpBDsR5oYgTYmyhno",
+      "betweenness_centrality": 0.11006952737308599
+    },
+    {
+      "label": "Shenbaga Devi Waterfalls",
+      "node": "place::ChIJ695M_corBDsRnPDPpXIaNdY",
+      "betweenness_centrality": 0.0770639280312077
+    },
+    {
+      "label": "Tenkasi",
+      "node": "place::ChIJ9Ri3vj2dBjsRuUVf6SNP2fk",
+      "betweenness_centrality": 0.05060637422710505
+    },
+    {
+      "label": "Shri Sorimuthu Ayyanar Temple",
+      "node": "place::ChIJjfO2v0cjBDsRsKc-LKoWRkQ",
+      "betweenness_centrality": 0.038876947164503885
+    },
+    {
+      "label": "Agasthiyar Falls",
+      "node": "place::ChIJs-vSFNY3BDsR89RjoQRctKQ",
+      "betweenness_centrality": 0.03720510575060373
+    },
+    {
+      "label": "Kannupuli Mettu Falls",
+      "node": "place::ChIJpyjnUcgqBDsRqKglR-rR6ic",
+      "betweenness_centrality": 0.036462065122203645
+    },
+    {
+      "label": "Kadayanallur Karuppanadhi Dam",
+      "node": "place::ChIJGdrFgPSFBjsRhm_nL3wfsO8",
+      "betweenness_centrality": 0.030172756946103014
+    },
+    {
+      "label": "View Point",
+      "node": "place::ChIJp6hF5x4rBDsRl1Fk7DNCBUg",
+      "betweenness_centrality": 0.029410571648450803
+    },
+    {
+      "label": "Gundaru dam Boating",
+      "node": "place::ChIJWfsnAAArBDsRyb5q2KR_aoU",
+      "betweenness_centrality": 0.02884589868110289
+    },
+    {
+      "label": "Agasthiyar Temple",
+      "node": "place::ChIJnzg1ZEyQBjsRGfXYSNapEy8",
+      "betweenness_centrality": 0.026218719316402617
+    }
+  ],
+  "closeness_centrality": [
+    {
+      "label": "Agasthiyar Falls",
+      "node": "place::ChIJs-vSFNY3BDsR89RjoQRctKQ",
+      "closeness_centrality": 0.58542748070638
+    },
+    {
+      "label": "Temple",
+      "node": "place::ChIJ59WpP4UpBDsR5oYgTYmyhno",
+      "closeness_centrality": 0.5803588445097879
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "closeness_centrality": 0.5778572977662112
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "closeness_centrality": 0.5778572977662112
+    },
+    {
+      "label": "Shenbaga Devi Waterfalls",
+      "node": "place::ChIJ695M_corBDsRnPDPpXIaNdY",
+      "closeness_centrality": 0.5704803960926
+    },
+    {
+      "label": "Sunflower Garden",
+      "node": "place::ChIJ308m0RKDBjsRZ0cQTKNjysU",
+      "closeness_centrality": 0.5585953878406709
+    },
+    {
+      "label": "Kadana Nathi Dam",
+      "node": "place::ChIJ____vx8uBDsRdy596_hZp7Y",
+      "closeness_centrality": 0.55627756465461
+    },
+    {
+      "label": "Sunfield sambavar vadakarai",
+      "node": "place::ChIJ681py5edBjsRbgFCDabz7qc",
+      "closeness_centrality": 0.55627756465461
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "closeness_centrality": 0.5539788970320703
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "closeness_centrality": 0.5516991484846132
+    }
+  ],
+  "eigenvector_centrality": [
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Agasthiyar Falls",
+      "node": "place::ChIJs-vSFNY3BDsR89RjoQRctKQ",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Falls",
+      "node": "place::ChIJNd6V4hQpBDsRdin5ED4v_gk",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Ramanathi River View Point",
+      "node": "place::ChIJNTlP4oYvBDsRzFjXuufmSLA",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Coutrallam Main Waterfalls",
+      "node": "place::ChIJS4UuXhkrBDsRolNUEQ3qPoI",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Dam Boating Point, Thenmala,Kollam",
+      "node": "place::ChIJ2eXb9TDWBTsRApB9tySLwcY",
+      "eigenvector_centrality": 0.0
+    },
+    {
+      "label": "Tiger Falls",
+      "node": "place::ChIJ3SL2-ywqBDsReqhmPpQ1N6Y",
+      "eigenvector_centrality": 0.0
+    }
+  ],
+  "katz_centrality": [
+    {
+      "label": "Falls",
+      "node": "place::ChIJNd6V4hQpBDsRdin5ED4v_gk",
+      "katz_centrality": 0.11969848204486207
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "katz_centrality": 0.11508951299620133
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "katz_centrality": 0.11488764328423368
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "katz_centrality": 0.11392908092363269
+    },
+    {
+      "label": "Thenmala Dam",
+      "node": "place::ChIJ8YVwxCXWBTsRvT3uZ68XOd4",
+      "katz_centrality": 0.11392551085595057
+    },
+    {
+      "label": "Chittraru Check dam",
+      "node": "place::ChIJLRKQ_zkpBDsR2Ss9Ye4itMg",
+      "katz_centrality": 0.11379770085894597
+    },
+    {
+      "label": "Dam Boating Point, Thenmala,Kollam",
+      "node": "place::ChIJ2eXb9TDWBTsRApB9tySLwcY",
+      "katz_centrality": 0.1124785285919014
+    },
+    {
+      "label": "Ariharanathi falls",
+      "node": "place::ChIJn6PVEciBBjsRUaH9qRKGb0A",
+      "katz_centrality": 0.11164745905076351
+    },
+    {
+      "label": "Thenmala Reservoir Boating Point",
+      "node": "place::ChIJK0NZsjHWBTsRmQc2zfFZbdw",
+      "katz_centrality": 0.11150127288603137
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "katz_centrality": 0.11118746094637255
+    }
+  ],
+  "pagerank": [
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "pagerank": 0.011302532478803383
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "pagerank": 0.011203083883037005
+    },
+    {
+      "label": "Ramanathi River View Point",
+      "node": "place::ChIJNTlP4oYvBDsRzFjXuufmSLA",
+      "pagerank": 0.01085051964912652
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "pagerank": 0.010847509891985338
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "pagerank": 0.01082032543779029
+    },
+    {
+      "label": "Temple",
+      "node": "place::ChIJ59WpP4UpBDsR5oYgTYmyhno",
+      "pagerank": 0.010741151852371802
+    },
+    {
+      "label": "Coutrallam Main Waterfalls",
+      "node": "place::ChIJS4UuXhkrBDsRolNUEQ3qPoI",
+      "pagerank": 0.010701790917632674
+    },
+    {
+      "label": "Palaruvi Waterfalls",
+      "node": "place::ChIJs0Wor3DVBTsR3EUyE5eY0po",
+      "pagerank": 0.010634458555749071
+    },
+    {
+      "label": "Kadana Nathi Dam",
+      "node": "place::ChIJ____vx8uBDsRdy596_hZp7Y",
+      "pagerank": 0.01060437429804677
+    },
+    {
+      "label": "Courtallam Tenkasi Road Taj Mahal taxi parking",
+      "node": "place::ChIJdxLncnIpBDsRVTR-LGvw5IE",
+      "pagerank": 0.010551403112810357
+    }
+  ],
+  "hits_hub": [
+    {
+      "label": "Falls",
+      "node": "place::ChIJNd6V4hQpBDsRdin5ED4v_gk",
+      "hits_hub": 0.014641170144037263
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "hits_hub": 0.014506626089590977
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "hits_hub": 0.014488524949552597
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "hits_hub": 0.014362701073260653
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "hits_hub": 0.014166203267613522
+    },
+    {
+      "label": "Thenmala Dam",
+      "node": "place::ChIJ8YVwxCXWBTsRvT3uZ68XOd4",
+      "hits_hub": 0.014000705255908356
+    },
+    {
+      "label": "NSP falls",
+      "node": "place::ChIJR_7XweMrBDsR-Deh8t3QKaE",
+      "hits_hub": 0.01390762551867704
+    },
+    {
+      "label": "Chittraru Check dam",
+      "node": "place::ChIJLRKQ_zkpBDsR2Ss9Ye4itMg",
+      "hits_hub": 0.01385784536124292
+    },
+    {
+      "label": "Coutrallam Main Waterfalls",
+      "node": "place::ChIJS4UuXhkrBDsRolNUEQ3qPoI",
+      "hits_hub": 0.013833938174253838
+    },
+    {
+      "label": "Dam Boating Point, Thenmala,Kollam",
+      "node": "place::ChIJ2eXb9TDWBTsRApB9tySLwcY",
+      "hits_hub": 0.013822528114200887
+    }
+  ],
+  "hits_authority": [
+    {
+      "label": "Falls",
+      "node": "place::ChIJNd6V4hQpBDsRdin5ED4v_gk",
+      "hits_authority": 0.014641170144037262
+    },
+    {
+      "label": "Kottavasal View Point",
+      "node": "place::ChIJYYLr_vB_BjsRgDn7xtJVMDQ",
+      "hits_authority": 0.014506626089590972
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+      "hits_authority": 0.01448852494955259
+    },
+    {
+      "label": "TR FALLS",
+      "node": "place::ChIJ4_gKm7MrBDsRKsWWQp_WprM",
+      "hits_authority": 0.014362701073260648
+    },
+    {
+      "label": "Main falls Arch",
+      "node": "place::ChIJWbtqLwArBDsRGyMHNLc54jA",
+      "hits_authority": 0.014166203267613526
+    },
+    {
+      "label": "Thenmala Dam",
+      "node": "place::ChIJ8YVwxCXWBTsRvT3uZ68XOd4",
+      "hits_authority": 0.014000705255908354
+    },
+    {
+      "label": "NSP falls",
+      "node": "place::ChIJR_7XweMrBDsR-Deh8t3QKaE",
+      "hits_authority": 0.013907625518677039
+    },
+    {
+      "label": "Chittraru Check dam",
+      "node": "place::ChIJLRKQ_zkpBDsR2Ss9Ye4itMg",
+      "hits_authority": 0.013857845361242922
+    },
+    {
+      "label": "Coutrallam Main Waterfalls",
+      "node": "place::ChIJS4UuXhkrBDsRolNUEQ3qPoI",
+      "hits_authority": 0.013833938174253838
+    },
+    {
+      "label": "Dam Boating Point, Thenmala,Kollam",
+      "node": "place::ChIJ2eXb9TDWBTsRApB9tySLwcY",
+      "hits_authority": 0.013822528114200884
+    }
+  ]
+}

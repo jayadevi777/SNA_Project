@@ -1,0 +1,200 @@
+{
+  "most_influential_place": {
+    "node": "place::ChIJxQpqzU5_BjsRqcYtZsnj2bA",
+    "degree_centrality": 0.49056603773584906,
+    "betweenness_centrality": 0.016904174296101682,
+    "closeness_centrality": 0.5516991484846132,
+    "eigenvector_centrality": 0.0,
+    "katz_centrality": 0.11508951299620133,
+    "pagerank": 0.011302532478803383,
+    "hits_hub": 0.014488524949552597,
+    "hits_authority": 0.01448852494955259,
+    "label": "Bhagavathipuram water falls",
+    "node_type": "place",
+    "average_rank": 4.875
+  },
+  "bridge_place": {
+    "node": "place::ChIJ59WpP4UpBDsR5oYgTYmyhno",
+    "degree_centrality": 0.49056603773584906,
+    "betweenness_centrality": 0.11006952737308599,
+    "closeness_centrality": 0.5803588445097879,
+    "eigenvector_centrality": 0.0,
+    "katz_centrality": 0.09969665780740775,
+    "pagerank": 0.010741151852371802,
+    "hits_hub": 0.013130917781201503,
+    "hits_authority": 0.013130917781201498,
+    "label": "Temple",
+    "node_type": "place",
+    "average_rank": 22.375
+  },
+  "most_central_user": {
+    "node": "user::rijas_galleria",
+    "degree_centrality": 0.02197802197802198,
+    "betweenness_centrality": 0.017898080827929524,
+    "closeness_centrality": 0.06321768119520929,
+    "eigenvector_centrality": 0.0,
+    "katz_centrality": 0.03923255868080444,
+    "pagerank": 0.003635648524505134,
+    "hits_hub": 0.04739673718869285,
+    "hits_authority": 0.04739673718869282,
+    "label": "Rijas Galleria",
+    "node_type": "user",
+    "average_rank": 2.125
+  },
+  "network_summary": {
+    "nodes": 160,
+    "edges": 3071,
+    "density": 0.24143081761006288,
+    "average_clustering": 0.23379039128958962,
+    "connected_components": 14,
+    "largest_component_size": 147,
+    "average_shortest_path_length": 2.1923399496785017,
+    "degree_distribution": {
+      "0": 13,
+      "1": 3,
+      "2": 9,
+      "3": 3,
+      "4": 6,
+      "5": 2,
+      "6": 5,
+      "7": 2,
+      "8": 4,
+      "9": 3,
+      "10": 1,
+      "12": 2,
+      "13": 2,
+      "14": 4,
+      "15": 2,
+      "16": 4,
+      "17": 4,
+      "18": 1,
+      "19": 2,
+      "20": 4,
+      "21": 4,
+      "22": 3,
+      "24": 2,
+      "25": 1,
+      "27": 1,
+      "28": 1,
+      "71": 21,
+      "72": 14,
+      "73": 7,
+      "74": 10,
+      "75": 3,
+      "76": 6,
+      "77": 7,
+      "78": 3,
+      "79": 1
+    },
+    "power_law_alpha": 1.258264327041992
+  },
+  "rating_centrality_correlation": {
+    "pagerank": 0.06379770278151274,
+    "betweenness_centrality": 0.14378414733061434,
+    "degree_centrality": -0.0018193877088615406
+  },
+  "highly_rated_places": [
+    {
+      "place_name": "Prana Miyawaki 2.0 - Tenkasi",
+      "rating": 5.0,
+      "total_user_ratings": 8
+    },
+    {
+      "place_name": "Sri Saptha Kanni Amman Kovil",
+      "rating": 5.0,
+      "total_user_ratings": 7
+    },
+    {
+      "place_name": "Padikasu Vinayagar Temple",
+      "rating": 5.0,
+      "total_user_ratings": 3
+    },
+    {
+      "place_name": "Indiahikes",
+      "rating": 4.9,
+      "total_user_ratings": 13610
+    },
+    {
+      "place_name": "Thrill Park",
+      "rating": 4.9,
+      "total_user_ratings": 923
+    },
+    {
+      "place_name": "Surandai Sri Pathirakaliamman Temple",
+      "rating": 4.9,
+      "total_user_ratings": 27
+    },
+    {
+      "place_name": "Gundaru dam Boating",
+      "rating": 4.9,
+      "total_user_ratings": 11
+    },
+    {
+      "place_name": "View Point",
+      "rating": 4.9,
+      "total_user_ratings": 7
+    },
+    {
+      "place_name": "Exoticamp",
+      "rating": 4.8,
+      "total_user_ratings": 2403
+    },
+    {
+      "place_name": "Mekkarai paddy field",
+      "rating": 4.8,
+      "total_user_ratings": 120
+    }
+  ],
+  "highly_connected_places": [
+    {
+      "label": "TR FALLS",
+      "degree_centrality": 0.4968553459119497,
+      "pagerank": 0.01082032543779029
+    },
+    {
+      "label": "Bhagavathipuram water falls",
+      "degree_centrality": 0.49056603773584906,
+      "pagerank": 0.011302532478803383
+    },
+    {
+      "label": "Main falls Arch",
+      "degree_centrality": 0.49056603773584906,
+      "pagerank": 0.010847509891985338
+    },
+    {
+      "label": "Temple",
+      "degree_centrality": 0.49056603773584906,
+      "pagerank": 0.010741151852371802
+    },
+    {
+      "label": "Kottavasal View Point",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.011203083883037005
+    },
+    {
+      "label": "Falls",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.010241024068511226
+    },
+    {
+      "label": "Mottai Dam",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.010198824412639352
+    },
+    {
+      "label": "Agasthiyar Falls",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.010117308865985029
+    },
+    {
+      "label": "Shenbaga Devi Waterfalls",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.009940808433196556
+    },
+    {
+      "label": "Erumai Chavadi Waterfalls",
+      "degree_centrality": 0.48427672955974843,
+      "pagerank": 0.009835093445537698
+    }
+  ]
+}
