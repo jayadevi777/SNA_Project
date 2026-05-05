@@ -8,6 +8,9 @@ Social Network Analysis project on tourism in Tenkasi using Google Places user i
 - Google Places API key
 - Neo4j
 
+Runs the app in the development mode.
+Open http://127.0.0.1:5001 to view it in your browser.
+
 ## Setup
 
 Install dependencies:
